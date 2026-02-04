@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Study App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Flashcards</h1>
+            <nav>
+                <button id="decksBtn" class="nav-btn active">Decks</button>
+                <button id="studyBtn" class="nav-btn">Study</button>
+                <button id="createBtn" class="nav-btn">Create</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Decks View -->
+            <section id="decksView" class="view active">
+                <h2>My Decks</h2>
+                <div id="decksList" class="decks-grid"></div>
+            </section>
+
+            <!-- Study View -->
+            <section id="studyView" class="view">
+                <div class="study-header">
+                    <button id="backToDecks" class="btn-secondary">← Back</button>
+                    <span id="progress">Card 1 of 10</span>
+                    <span id="score">Score: 0%</span>
+                </div>
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <p id="cardFront">Question</p>
+                                <span class="hint">Click to flip</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <p id="cardBack">Answer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="study-controls">
+                    <button id="prevBtn" class="btn-nav">← Previous</button>
+                    <button id="flipBtn" class="btn-primary">Flip Card</button>
+                    <button id="nextBtn" class="btn-nav">Next →</button>
+                </div>
+                <div class="difficulty-buttons">
+                    <button id="hardBtn" class="btn-difficulty hard">Hard 😰</button>
+                    <button id="goodBtn" class="btn-difficulty good">Good 🙂</button>
+                    <button id="easyBtn" class="btn-difficulty easy">Easy 😊</button>
+                </div>
+            </section>
+
+            <!-- Create View -->
+            <section id="createView" class="view">
+                <h2>Create New Deck</h2>
+                <div class="form-group">
+                    <label>Deck Name</label>
+                    <input type="text" id="deckName" placeholder="e.g., Spanish Vocabulary">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" id="deckDesc" placeholder="Brief description">
+                </div>
+                <div id="cardsContainer">
+                    <div class="card-input">
+                        <input type="text" class="front-input" placeholder="Front (Question)">
+                        <input type="text" class="back-input" placeholder="Back (Answer)">
+                        <button class="remove-card">×</button>
+                    </div>
+                </div>
+                <button id="addCardBtn" class="btn-secondary">+ Add Card</button>
+                <button id="saveDeckBtn" class="btn-primary">Save Deck</button>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
